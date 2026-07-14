@@ -750,37 +750,47 @@ footer.site-footer a:hover {
         color: black !important;
     }
 
-    /* Document is printed without the office letterhead or address footer */
-    .doc-header,
+    /* Document is printed without the address footer, but keeps the letterhead logo */
     .doc-footer {
         display: none !important;
     }
 
+    .doc-header {
+        margin-bottom: 12px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .doc-logo-svg {
+        width: 44px !important;
+        height: 44px !important;
+        margin-bottom: 6px !important;
+    }
+
     /* Generous layout so the Procuração fills a single A4 page well */
     .doc-title {
-        margin: 0 0 28px !important;
-        font-size: 16pt !important;
+        margin: 0 0 14px !important;
+        font-size: 15pt !important;
     }
 
     .doc-body {
-        font-size: 12pt !important;
-        line-height: 1.7 !important;
+        font-size: 11.5pt !important;
+        line-height: 1.6 !important;
     }
 
     .doc-paragraph {
-        margin-bottom: 1.05rem !important;
+        margin-bottom: 0.9rem !important;
     }
 
     .doc-signatures {
-        margin-top: 14px !important;
+        margin-top: 10px !important;
     }
 
     .doc-signature-space {
-        height: 40px !important;
+        height: 32px !important;
     }
 
     .doc-sig-line {
-        margin-top: 14px !important;
+        margin-top: 10px !important;
         margin-bottom: 8px !important;
         width: 280px !important;
     }
