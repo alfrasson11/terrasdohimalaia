@@ -318,6 +318,77 @@ header {
     font-size: 0.95rem;
 }
 
+/* Videos Section */
+.videos-section {
+    padding: 6rem 0;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.video-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.video-card:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #000;
+    overflow: hidden;
+}
+
+.video-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+.video-info {
+    padding: 2rem 2.5rem;
+}
+
+.video-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.video-info p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .videos-section {
+        padding: 4rem 0;
+    }
+
+    .video-info h3 {
+        font-size: 1.2rem;
+    }
+}
+
 /* FAQ Section */
 .faq-section {
     padding: 6rem 0;
@@ -632,6 +703,16 @@ input::placeholder {
     text-align: center;
 }
 
+.doc-signature-space {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8.5pt;
+    font-style: italic;
+    color: #6b7280;
+}
+
 .doc-sig-line {
     width: 250px;
     border-top: 1px solid #111827;
@@ -649,10 +730,7 @@ input::placeholder {
 }
 
 .doc-footer {
-    position: absolute;
-    bottom: 30px;
-    left: 40px;
-    right: 40px;
+    margin-top: 40px;
     text-align: center;
     font-size: 8pt;
     color: #4b5563;
@@ -697,6 +775,7 @@ footer.site-footer a:hover {
     header,
     .hero,
     .info-section,
+    .videos-section,
     .faq-section,
     .generator-section .form-container,
     .generator-section .tabs,
@@ -743,28 +822,13 @@ footer.site-footer a:hover {
         color: black !important;
     }
 
+    /* Document is printed without the office letterhead or address footer */
+    .doc-header,
     .doc-footer {
-        position: fixed !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        border-top: 1px solid #ccc !important;
-        font-size: 7.5pt !important;
-        padding-top: 6px !important;
+        display: none !important;
     }
 
     /* Compact layout so the Procuração fits on a single A4 page */
-    .doc-header {
-        margin-bottom: 12px !important;
-        padding-bottom: 8px !important;
-    }
-
-    .doc-logo-svg {
-        width: 42px !important;
-        height: 42px !important;
-        margin-bottom: 6px !important;
-    }
-
     .doc-title {
         margin: 8px 0 !important;
         font-size: 13pt !important;
@@ -783,9 +847,41 @@ footer.site-footer a:hover {
         margin-top: 20px !important;
     }
 
+    .doc-signature-space {
+        height: 45px !important;
+    }
+
     .doc-sig-line {
         margin-top: 15px !important;
         margin-bottom: 6px !important;
+    }
+
+    /* Compact layout so Pedido de Desfiliação fits on a single A4 page */
+    .doc-desfiliacao {
+        font-size: 9.5pt !important;
+        line-height: 1.35 !important;
+        padding-top: 0 !important;
+    }
+
+    .doc-desfiliacao img {
+        width: 100px !important;
+    }
+
+    .doc-desfiliacao > div:first-child {
+        margin-bottom: 10px !important;
+    }
+
+    .doc-desfiliacao p {
+        margin-bottom: 8px !important;
+    }
+
+    .doc-desfiliacao p:last-of-type {
+        margin-bottom: 2px !important;
+        font-size: 9pt !important;
+    }
+
+    .doc-desfiliacao .doc-signature-space {
+        height: 40px !important;
     }
 
     /* Page size & margins */

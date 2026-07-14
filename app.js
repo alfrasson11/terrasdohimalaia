@@ -179,6 +179,9 @@ function renderProcuracao() {
 
         <div class="doc-signatures">
             <div style="margin-top: 20px; font-family:'Times New Roman',serif;">${dateFormatted}</div>
+            <div class="doc-signature-space">
+                <span class="screen-only">(espaço reservado para assinatura digital)</span>
+            </div>
             <div class="doc-sig-line"></div>
             <div class="doc-sig-name">${nome}</div>
             <div class="doc-sig-sub">Outorgante</div>
@@ -200,11 +203,12 @@ function renderDesfiliacao() {
     const num        = val('d-num',         '____');
     const compRaw    = val('d-comp',        '');
     const comp       = compRaw ? `, ${compRaw}` : '';
+    const bairro     = val('d-bairro',      'Residencial Terras do Himalaia');
     const dataCidade = val('d-data-cidade', 'Bocaina');
     const data       = dateShort(document.getElementById('d-data').value);
 
     documentSheet.innerHTML = `
-        <div style="font-family:'Times New Roman',serif; font-size:11pt; line-height:1.7; padding-top:10px;">
+        <div class="doc-desfiliacao" style="font-family:'Times New Roman',serif; font-size:11pt; line-height:1.7; padding-top:10px;">
 
             <div style="text-align:center; margin-bottom:20px;">
                 <img src="assets/portal-entrada.png" alt="Portal de entrada - Terras do Himalaia" style="width:160px; height:auto;">
@@ -215,7 +219,7 @@ function renderDesfiliacao() {
             </p>
 
             <p style="text-align:justify; margin-bottom:20px;">
-                Eu, <strong>${nome}</strong>, proprietário do imóvel localizado em ${rua}, ${num}${comp} - <strong>Residencial Terras do Himalaia</strong>, venho, por meio desta, notificar formalmente minha decisão de desfiliar-me da Associação de Moradores do Loteamento Residencial Terras do Himalaia, com efeito imediato a partir do recebimento desta notificação.
+                Eu, <strong>${nome}</strong>, proprietário do imóvel localizado em ${rua}, ${num}${comp}, Bairro ${bairro}, venho, por meio desta, notificar formalmente minha decisão de desfiliar-me da Associação de Moradores do Loteamento Residencial Terras do Himalaia, com efeito imediato a partir do recebimento desta notificação.
             </p>
 
             <p style="text-align:justify; margin-bottom:20px;">
@@ -234,7 +238,11 @@ function renderDesfiliacao() {
             <p style="margin-bottom:4px;">${nome}</p>
             <p style="margin-bottom:24px;">CPF: &nbsp;${cpf}</p>
 
-            <p style="margin-bottom:70px;">${dataCidade}, ${data}</p>
+            <p style="margin-bottom:6px;">${dataCidade}, ${data}</p>
+
+            <div class="doc-signature-space">
+                <span class="screen-only">(espaço reservado para assinatura digital)</span>
+            </div>
 
             <div style="width:280px; border-top:1px solid #111827; margin-bottom:6px;"></div>
             <p style="font-size:10pt;">Assinatura</p>
